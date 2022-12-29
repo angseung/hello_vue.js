@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Sample</title>
+</head>
+<body>
+  <div id="app"> <!-- where you want to mount vue instance -->
+    {{ message }}
+  </div>
+  <div id="app2" style="width:100px; height:100px; background-color:#CF0">
+    {{ message2 }}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        message: "Hello Vue.js!"
+      },
+      beforeCreate: function() {
+        console.log("beforeCreated")
+      },
+      created: function () {
+        console.log("created")
+      },
+      mounted: function () {
+        console.log("mounted")
+        this.message = "Hello Vue!"
+      },
+      beforeUpdate: function () {
+        console.log("beforeUpdate")
+      },
+      updated: function () {
+        console.log("updated")
+      }
+    });
+    new Vue({
+      el: "#app2",
+      data: {
+        message2: "Bye Vue.js!"
+      }
+    });
+  </script>
+</body>
+</html>
