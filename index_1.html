@@ -5,11 +5,17 @@
   <title>Vue Sample</title>
 </head>
 <body>
-  <div id="app"> <!-- where you want to mount vue instance -->
+  <div id="app" style="width:200px; height:40px; background-color:#CCFF99"> <!-- where you want to mount vue instance -->
     {{ message }}
   </div>
-  <div id="app2" style="width:100px; height:100px; background-color:#CF0">
+  <div id="app2" style="width:200px; height:40px; background-color:#DDFF33">
     {{ message2 }}
+  </div>
+  <div id="app3" style="width:200px; height:40px; background-color:#EEFF00">
+    {{ message3 }}
+  </div>
+  <div id="app4" style="width:200px; height:40px; background-color:#BBDF01">
+    {{ message4 }}
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
   <script>
@@ -26,7 +32,7 @@
       },
       mounted: function () {
         console.log("mounted")
-        this.message = "Hello Vue!"
+        this.message = "오늘 점심"
       },
       beforeUpdate: function () {
         console.log("beforeUpdate")
@@ -38,7 +44,19 @@
     new Vue({
       el: "#app2",
       data: {
-        message2: "Bye Vue.js!"
+        message2: "석양식당"
+      }
+    });
+    new Vue({
+      el: "#app3",
+      data: {
+        message3: "나주곰탕"
+      }
+    });
+    new Vue({
+      el: "#app4",
+      data: {
+        message4: "오봉집"
       }
     });
   </script>
